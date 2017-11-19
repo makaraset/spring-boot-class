@@ -27,4 +27,5 @@ public class PageController {
 			(name="name") String name) {
 		return "<h1> Hi " + name + " you are contacting us via email " + email +" </h1>";
 	}
+
 }

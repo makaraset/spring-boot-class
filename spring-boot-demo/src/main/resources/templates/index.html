@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1" />
 <title>Insert title here</title>
 <link rel="StyleSheet" href="/css/index.css" />
 </head>
 <body>
-	<h1>Hello Spring Boot!</h1>
+
+	<h1 th:text="#{message.header}"></h1>
+	<h2 th:text="#{message.welcome}"></h2>
+	<h2 th:utext="#{message.welcome}"></h2>
+	
+	<ul>
+		<li th:text="${user.id}"></li>
+		<li th:text="${user.name}"></li>
+		<li th:text="${user.gender}"></li>
+		<li th:text="${user.image}"></li>
+	</ul>
+	
+	<ul th:object="${user}">
+		<li th:text="*{id}"></li>
+		<li th:text="*{name}"></li>
+		<li th:text="*{gender}"></li>
+		<li th:text="*{image}"></li>
+	</ul>
+	
+	
 </body>
 </html>

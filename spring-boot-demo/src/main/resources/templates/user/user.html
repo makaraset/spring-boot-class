@@ -39,7 +39,7 @@
 					</div>
 				</td>
 				 
-				<td th:text="${user.image}"></td>
+				<td><img th:src="@{${user.image}}" /></td>
 				<td>
 					<form th:action="@{user/remove(id=${user.id})}" method="post" class="btn-group">
 				

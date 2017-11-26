@@ -5,16 +5,21 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.github.javafaker.Faker;
+
 import model.User;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
 	private List<User> users = new ArrayList<>();
+	private Faker faker = new Faker();
 	
 	public UserRepositoryImpl() {
 		for(int i=0;i<10;i++) {
-			User user = new User(i+1, "User-" + (i+1), i<5?"F":"M", "User-" + (i+1) + ".jpg");
+			String name = faker.name().fullName();
+			String img = faker.internet().image(100, 100, false, "image");
+			User user = new User(i+1, name + (i+1), i<5?"F":"M", img);
 			users.add(user);
 		}
 		

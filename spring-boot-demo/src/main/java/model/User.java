@@ -14,6 +14,10 @@ public class User {
 		this.image = image;
 	}
 	
+	public User() {
+		
+	}
+	
 	public long getId() {
 		return id;
 	}
